@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLAMES Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #8a2be2);
+            color: white;
+            text-align: center;
+            padding: 50px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input.form-control {
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: black;
+            text-align: center;
+            transition: 0.3s ease-in-out;
+        }
+
+        input.form-control:focus {
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+            border: none;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-custom {
+            background: linear-gradient(45deg, #ff4081, #ff7eb3);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(45deg, #e60073, #ff4081);
+            box-shadow: 0px 0px 15px rgba(255, 64, 129, 0.8);
+        }
+
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #result.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-4">
+        <h1 class="mb-4">FLAMES Game 🔥</h1>
+
+        <div class="mb-3">
+            <label for="name1" class="form-label fw-bold">Enter First Name</label>
+            <input type="text" id="name1" class="form-control" placeholder="Type here...">
+        </div>
+
+        <div class="mb-3">
+            <label for="name2" class="form-label fw-bold">Enter Second Name</label>
+            <input type="text" id="name2" class="form-control" placeholder="Type here...">
+        </div>
+
+        <p id="result"></p>
+
+        <button id="submitBtn" class="btn btn-custom">Find Relationship</button>
+    </div>
+
+    <script>
+        function fla(n1, n2) {
+            for (var i = 0; i < n1.length; i++) {
+                for (var j = 0; j < n2.length; j++) {
+                    if (n1[i] === n2[j]) {
+                        n1 = n1.replace(n1[i], ' ');
+                        n2 = n2.replace(n2[j], ' ');
+                        break;
+                    }
+                }
+            }
+            return (n1 + n2).split(' ').join('').length;
+        }
+
+        function flames(len) {
+            var flames = ['F', 'L', 'A', 'M', 'E', 'S'];
+            var p = 0;
+            while (flames.length > 1) {
+                var res = (p + len - 1) % flames.length;
+                flames.splice(res, 1);
+                p = res;
+            }
+            return flames[0];
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            var name1 = document.getElementById('name1').value.trim().toLowerCase();
+            var name2 = document.getElementById('name2').value.trim().toLowerCase();
+
+            if (name1 === '' || name2 === '') {
+                alert('Please enter both names.');
+                return;
+            }
+
+            var res = fla(name1, name2);
+            var final = flames(res);
+
+            var resText = '';
+
+            switch (final) {
+                case 'F':
+                    resText = 'Friend 💖';
+                    break;
+                case 'L':
+                    resText = 'Love ❤️';
+                    break;
+                case 'A':
+                    resText = 'Affection 💕';
+                    break;
+                case 'M':
+                    resText = 'Marriage 💍';
+                    break;
+                case 'E':
+                    resText = 'Enemy 💔';
+                    break;
+                case 'S':
+                    resText = 'Siblings 👭';
+                    break;
+            }
+
+            var resultElem = document.getElementById('result');
+            resultElem.innerHTML = 'Result: <span class="text-success">' + resText + '</span>';
+            resultElem.classList.add('show');
+        });
+    </script>
+</body>
+
+</html>

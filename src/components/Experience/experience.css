@@ -1,0 +1,178 @@
+/* General Experience Section */
+#experience {
+  width: 100vw;
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0; /* Light gray for better readability */
+}
+
+/* Title Styling */
+.experienceTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  padding-top: 0rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Purple to blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.experienceDesc {
+  font-weight: 300;
+  font-size: 1.1rem;
+  max-width: 51rem;
+  padding: 0 2rem;
+  color: #a0a0a0; /* Light gray for subtlety */
+}
+
+/* Experience Container */
+.experienceContainer {
+  width: 100vw;
+  max-width: 80%;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+/* Individual Experience Block */
+.experienceBlock {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  background: #2a2a2a; /* Dark gray background */
+  transition: all 0.3s ease-in-out;
+  border-left: 5px solid #6a11cb; /* Purple accent */
+}
+
+.experienceBlock:hover {
+  transform: translateY(-5px);
+  background: #333333; /* Slightly lighter gray on hover */
+}
+
+.experienceBlock:hover .experienceImg {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Company Logo */
+.experienceImg {
+  object-fit: cover;
+  height: 5rem;
+  width: 5rem;
+  margin-right: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Content Area */
+.experienceContent {
+  flex: 1;
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.experienceHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #6a11cb; /* Purple for headings */
+  margin: 0;
+}
+
+.experienceHeader span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #b0b0b0; /* Light gray for subtext */
+}
+
+.experienceYear {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2575fc; /* Blue for year */
+  margin: 0;
+}
+
+.experiencePoints {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.experiencePoints li {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  color: #d0d0d0; /* Light gray for points */
+}
+
+/* Tool Badges */
+.experienceTools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.experienceTools li {
+  background: #2575fc; /* Blue background */
+  color: white; /* White text */
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(37, 117, 252, 0.3); /* Blue shadow */
+  transition: all 0.3s ease-in-out;
+}
+
+.experienceTools li:hover {
+  background: #6a11cb; /* Purple on hover */
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 720px) {
+  .experienceBlock {
+    flex-direction: column;
+    /* text-align: center; */
+    border-left: none;
+    border-top: 5px solid #6a11cb; 
+  }
+
+  .experienceImg {
+    margin-bottom: 1rem;
+  }
+
+  .experienceHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .experienceYear {
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .experienceHeader h2 {
+    font-size: 5vw;
+  }
+
+  .experienceImg {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+ul{ 
+  list-style-type: none;
+}
