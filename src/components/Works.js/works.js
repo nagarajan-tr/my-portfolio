@@ -45,7 +45,7 @@ const Works = () => {
               <li>Simple UI with dynamic results.</li>
             </ul>
             <p className="usedTech">Technologies: HTML, CSS, JavaScript</p>
-            <a href="https://your-flames-app-link.com" target="_blank" rel="noreferrer" className="visit-btn">Visit App</a>
+            <a href="/Flames.html" target="_blank" rel="noreferrer" className="visit-btn">Visit App</a>
           </div>
         </div>
 
