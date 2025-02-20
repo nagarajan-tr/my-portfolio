@@ -78,12 +78,22 @@
     .bg {
         right: -20vw;
     }
+    .introContent{
+        font-size: 10vw;
+        right: -20vw;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
     .bg {
-        right: -40vw;
+        right: -10vw;
     }
+    .introContent{
+        font-size: 10vw;
+        right: -20vw;
+    }
+
 }
 .resumebtn{
     background: white;

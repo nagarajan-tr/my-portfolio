@@ -4,7 +4,7 @@ import bg from '../../assets/image2.png';
 import { Link } from 'react-scroll';
 import btnImg from '../../assets/hireme.png';
 import resume from '../../assets/resume.png';
-import Nagarajan_resume from '../../assets/Nagarajan_resume.pdf';
+import Nagarajan_resume from '../../assets/nagarajan.pdf';
 
 const Intro = () => {
   return (
