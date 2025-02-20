@@ -8,7 +8,7 @@ import Nagarajan_resume from '../../assets/nagarajan.pdf';
 
 const Intro = () => {
   return (
-    <section id="intro">
+    <section id="intro" className='intro'>
         <div className="introContent">
             <span className='hello'>
                 Hello!
